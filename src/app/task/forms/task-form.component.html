@@ -2,7 +2,7 @@
     <form #taskForm="ngForm">
       <div class="form-group">
         <label for="details">Details</label>
-        <input type="text" class="form-control" id="details" name="details"
+        <input #field type="text" class="form-control" id="details" name="details"
          [(ngModel)] ="taskObject.details" required>
          <!-- 
          //old apporach of two way data binding
@@ -14,7 +14,7 @@
            
            
           -->
-       		 {{taskObject | json }}
+       		 {{field.className}}
        		 {{taskForm.value | json}}
       </div>
   
