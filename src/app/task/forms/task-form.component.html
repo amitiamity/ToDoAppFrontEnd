@@ -13,7 +13,24 @@
          	This field is required.
          </div>
       </div>
+  	<!--  adding select option in angular -->
+  	<div class="form-group" [class.has-error]="hasTaskTypeError" >
+  	<label class="control-label">Select type of task</label>
+  	<select #tasktype class="form-control" name="tasktype"
+  		 [(ngModel)] = "taskObject.tasktype"
+  		 (blur)="validateTaskType(tasktype.value)"
+  		 (change)="validateTaskType(tasktype.value)">
+  		<option value="default">Select a tasktype......</option>
+  		<option *ngFor="let tasktype of taskTypes">
+  			{{tasktype}}
+  		</option>
   		
+  	
+  	</select>
+  	<div *ngIf="hasTaskTypeError" class="alert alert-danger">
+         	Please select task type.
+         </div>
+  	</div>
       <button type="submit" class="btn btn-success">Submit</button>
  
     </form>
