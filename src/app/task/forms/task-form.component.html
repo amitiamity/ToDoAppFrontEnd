@@ -1,0 +1,23 @@
+ <h5>Create a Task</h5>
+    <form #taskForm="ngForm">
+      <div class="form-group">
+        <label for="details">Details</label>
+        <input type="text" class="form-control" id="details" name="details"
+         [(ngModel)] ="taskObject.details" required>
+         <!-- 
+         //old apporach of two way data binding
+           [ngModel] ="taskObject.details" (ngModelChange)="taskObject.details=$event" required>
+           
+           when we need to call a function on two way data binding, then we can use old syntax as below :
+           
+           [ngModel] = "taskObject.details" (ngModelChange)="function1()"
+           
+           
+          -->
+       		 {{taskObject | json }}
+       		 {{taskForm.value | json}}
+      </div>
+  
+      <button type="submit" class="btn btn-success">Submit</button>
+ 
+    </form>
