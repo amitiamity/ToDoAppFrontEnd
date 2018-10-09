@@ -1,8 +1,13 @@
  <h5>Create a Task</h5>
-    <form #taskForm="ngForm">
-      <div class="form-group">
-        <label for="details">Details</label>
-        <input #detailsfield="ngModel" type="text" class="form-control" id="details" name="details"
+ <!-- Adding css class for error handler 
+ has-error is the class and "detailsfield.invalid && detailsfield.touched" is condition to toggle
+ 
+ 	
+ -->
+    <form #taskForm="ngForm" >
+      <div class="form-group" [class.has-error]="detailsfield.invalid && detailsfield.touched">
+        <label for="details" class="control-label">Details</label>
+        <input #detailsfield="ngModel" type="text" pattern = ".*" class="form-control" id="details" name="details"
          [(ngModel)] ="taskObject.details" required>
          <div *ngIf="detailsfield.invalid && detailsfield.touched" class="alert alert-danger">
          	This field is required.
