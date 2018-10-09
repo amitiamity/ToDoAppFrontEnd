@@ -1,5 +1,5 @@
 export class TaskClass {
   constructor(
-    public details: string
+    public details?: string
   ) {}
 }

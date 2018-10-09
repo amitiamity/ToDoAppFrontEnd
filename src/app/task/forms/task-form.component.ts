@@ -10,7 +10,7 @@ export class TaskFormComponent implements OnInit {
 
   submitted = false;
   onSubmit(){this.submitted = true}
-  taskObject = new TaskClass("New task created 1");
+  taskObject = new TaskClass();
   
   constructor() { }
 

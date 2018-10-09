@@ -2,20 +2,11 @@
     <form #taskForm="ngForm">
       <div class="form-group">
         <label for="details">Details</label>
-        <input #field="ngModel" type="text" class="form-control" id="details" name="details"
+        <input #detailsfield="ngModel" type="text" class="form-control" id="details" name="details"
          [(ngModel)] ="taskObject.details" required>
-         <!-- 
-         //old apporach of two way data binding
-           [ngModel] ="taskObject.details" (ngModelChange)="taskObject.details=$event" required>
-           
-           when we need to call a function on two way data binding, then we can use old syntax as below :
-           
-           [ngModel] = "taskObject.details" (ngModelChange)="function1()"
-           
-           
-          -->
-       		 {{field.valid}}
-       		
+         <div *ngIf="detailsfield.invalid && detailsfield.dirty" class="alert alert-danger">
+         	This field is required.
+         </div>
       </div>
   
       <button type="submit" class="btn btn-success">Submit</button>
