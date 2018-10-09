@@ -4,11 +4,11 @@
         <label for="details">Details</label>
         <input #detailsfield="ngModel" type="text" class="form-control" id="details" name="details"
          [(ngModel)] ="taskObject.details" required>
-         <div *ngIf="detailsfield.invalid && detailsfield.dirty" class="alert alert-danger">
+         <div *ngIf="detailsfield.invalid && detailsfield.touched" class="alert alert-danger">
          	This field is required.
          </div>
       </div>
-  
+  		
       <button type="submit" class="btn btn-success">Submit</button>
  
     </form>
